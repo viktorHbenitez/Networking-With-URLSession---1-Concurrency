@@ -1,15 +1,17 @@
-# Currency iOS : 
+//
+//  ViewController.swift
+//  ConcurrencyTest
+//
+//  Created by Brian on 8/31/18.
+//  Copyright © 2018 Razeware. All rights reserved.
+//
 
-### Description:  
-
-
-```swift
-
+import UIKit
 
 class ViewController: UIViewController {
-  
-  ...
 
+  @IBOutlet weak var primeNumberButton: UIButton!
+  
   @IBAction func calculatePrimeNumbers(_ sender: Any) {
     let queue = OperationQueue()
     queue.addOperation {
@@ -21,22 +23,11 @@ class ViewController: UIViewController {
     }
   }
   
-  
-  ...  
-}
-
-
-// or 
-
-class CalculatePrimeOperation: Operation {
-  
-  override func main() {
-    for number in 0 ... 100_000_000 {
-      let isPrimeNumber = isPrime(number: number)
-      print("\(number) is prime: \(isPrimeNumber)")
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
   }
-  
+
   func isPrime(number: Int) -> Bool {
     if number <= 1 {
       return false
@@ -53,12 +44,6 @@ class CalculatePrimeOperation: Operation {
     }
     return true
   }
-  
+
 }
 
-
-
-```
-
-
-![imagen](../master/Sketch/CurrencyiOS.gif)  

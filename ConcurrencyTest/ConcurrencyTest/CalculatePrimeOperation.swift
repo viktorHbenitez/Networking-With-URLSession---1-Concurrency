@@ -1,32 +1,12 @@
-# Currency iOS : 
+//
+//  CalculatePrimeOperation.swift
+//  ConcurrencyTest
+//
+//  Created by Brian on 8/31/18.
+//  Copyright © 2018 Razeware. All rights reserved.
+//
 
-### Description:  
-
-
-```swift
-
-
-class ViewController: UIViewController {
-  
-  ...
-
-  @IBAction func calculatePrimeNumbers(_ sender: Any) {
-    let queue = OperationQueue()
-    queue.addOperation {
-      for number in 0 ... 100_000_000 {
-        let isPrimeNumber = self.isPrime(number: number)
-        print("\(number) is prime: \(isPrimeNumber)")
-      }
-
-    }
-  }
-  
-  
-  ...  
-}
-
-
-// or 
+import Foundation
 
 class CalculatePrimeOperation: Operation {
   
@@ -55,10 +35,3 @@ class CalculatePrimeOperation: Operation {
   }
   
 }
-
-
-
-```
-
-
-![imagen](../master/Sketch/CurrencyiOS.gif)  
